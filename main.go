@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"embed"
 	"fmt"
 	"github.com/mpetavy/common"
 	"net/http"
@@ -16,8 +17,11 @@ var (
 	tlsInfo         string
 )
 
+//go:embed go.mod
+var resources embed.FS
+
 func init() {
-	common.Init("webpage", "", "", "", "2023", "webpage", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, start, stop, nil, 0)
+	common.Init("", "", "", "", "webpage", "", "", "", &resources, start, stop, nil, 0)
 }
 
 func badRequest(w http.ResponseWriter, msg string) {
@@ -109,7 +113,7 @@ func start() error {
 		}
 	}()
 
-	time.Sleep(common.MillisecondToDuration(*common.FlagServiceStartTimeout))
+	time.Sleep(common.MillisecondToDuration(*common.FlagServiceTimeout))
 
 	if err != nil && err == http.ErrServerClosed {
 		<-ctxServer.Done()
