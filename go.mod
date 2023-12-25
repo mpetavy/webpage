@@ -1,8 +1,8 @@
-module webpage
+module github.com/mpetavy/webpage
 
 go 1.21.4
 
-require github.com/mpetavy/common v1.6.38
+require github.com/mpetavy/common v1.6.41
 
 require (
 	cloud.google.com/go v0.110.2 // indirect
