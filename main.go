@@ -5,9 +5,9 @@ import (
 	"embed"
 	"fmt"
 	"github.com/mpetavy/common"
+	"github.com/mpetavy/webpage/components"
 	"net/http"
 	"time"
-	"webpage/components"
 )
 
 var (
