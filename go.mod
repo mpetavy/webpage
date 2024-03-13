@@ -2,7 +2,7 @@ module github.com/mpetavy/webpage
 
 go 1.21.4
 
-require github.com/mpetavy/common v1.7.6
+require github.com/mpetavy/common v1.7.7
 
 require (
 	cloud.google.com/go v0.110.2 // indirect
