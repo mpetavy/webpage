@@ -2,7 +2,7 @@ module github.com/mpetavy/webpage
 
 go 1.21.4
 
-require github.com/mpetavy/common v1.8.68
+require github.com/mpetavy/common v1.8.69
 
 require (
 	github.com/bahlo/generic-list-go v0.2.0 // indirect
